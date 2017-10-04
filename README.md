@@ -12,8 +12,8 @@ Time spent: **20** hours spent in total
 
 ## Documentations
 
-- [] [1. Zapato - Vision]()
-- [] [2. Zapato - Project Plan]()
+- [] [1. Zapato - Vision](https://github.com/AnimeMei/Zapato/blob/master/Documentations/1.%20Vision%20Doc%20-%20Zapato.pdf)
+- [] [2. Zapato - Project Plan](https://github.com/AnimeMei/Zapato/blob/master/Documentations/2.%20Project%20Plan%20-%20Zapato.pdf)
 <!---
 - [x] [3. Zapato - Flowchart](https://github.com/AnimeMei/CECS-343-mw-GroupD/blob/master/Documentations/3.%20Illuminati%20Deluxe%20-%20Flowchart.pdf)
 - [x] [4. Zapato - UML](https://github.com/AnimeMei/CECS-343-mw-GroupD/blob/master/Documentations/4.%20Illuminati%20Deluxe%20-%20UML.pdf)
