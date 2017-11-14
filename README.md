@@ -1,16 +1,24 @@
-# *Zapato*
-Senior Project by CECS 491A Group D
+<img src="https://github.com/AnimeMei/Zapato/blob/master/Logo/zapato_logo.jpg" alt="Zapato logo" height="100" >
 
-**Zapato** is an Android application.
+Zapato
+======
 
-<!---
-Time spent: **20** hours spent in total
--->
+Welcome to Zapato!
 
+Zapato is a popular sell & bid market place available as an Android application primary focusing on high quality sneaker shoes for both adult male and female consumers. 
 
+This project started as a Senior Project by CECS 491A Group D from California State University, Long Beach.
 
+Table of contents
+=================
 
-## Documentations
+  * [Zapato](#zapato)
+  * [Table of content](#table-of-contents)
+  * [Documentations](#documentations)
+ 
+
+Documentations
+==============
 
 - [x] [1. Zapato - Vision](https://github.com/AnimeMei/Zapato/blob/master/Documentations/1.%20Vision%20Doc%20-%20Zapato.pdf)
 - [x] [2. Zapato - Project Plan](https://github.com/AnimeMei/Zapato/blob/master/Documentations/2.%20Project%20Plan%20-%20Zapato.pdf)
