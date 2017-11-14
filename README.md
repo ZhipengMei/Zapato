@@ -5,7 +5,7 @@ Zapato
 
 Welcome to Zapato!
 
-Zapato is a popular sell & bid market place available as an Android application primary focusing on high quality sneaker shoes for both adult male and female consumers. 
+Zapato is a popular sell & bid marketplace available as an Android application primary focusing on high quality sneaker shoes for both adult male and female consumers. 
 
 This project started as a Senior Project by CECS 491A Group D from California State University, Long Beach.
 
