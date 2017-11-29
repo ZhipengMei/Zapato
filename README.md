@@ -20,18 +20,31 @@ Table of contents
 Documentations
 ==============
 
-- [x] [1. Zapato - Vision](https://github.com/AnimeMei/Zapato/blob/master/Documentations/1.%20Vision%20Doc%20-%20Zapato.pdf)
-- [x] [2. Zapato - Project Plan](https://github.com/AnimeMei/Zapato/blob/master/Documentations/2.%20Project%20Plan%20-%20Zapato.pdf)
-
-- [x] [3. Zapato - Flowchart](https://github.com/AnimeMei/Zapato/blob/master/Documentations/3.%20Flowchart%20Diagram%20-%20Zapato.pdf)
-
-- [x] [4. Zapato - UML](https://github.com/AnimeMei/Zapato/blob/master/Documentations/4.%20UML%20-%20Zapato.pdf)
-
-- [x] [5. Zapato - Use Case](https://github.com/AnimeMei/Zapato/blob/master/Documentations/5.%20Use%20Cases%20-%20Zapato.pdf)
-- [x] [6. Zapato - Database Design](https://github.com/AnimeMei/Zapato/blob/master/Documentations/6.%20Database%20Design%20-%20Zapato.pdf)
-- [x] [7. Zapato - Test Plan](https://github.com/AnimeMei/Zapato/blob/master/Documentations/7.%20Test%20Plan%20-%20Zapato.pdf)
-
+- [x] [1. Vision Document](https://github.com/AnimeMei/Zapato/blob/master/Documentations/1.%20Vision%20Document%20-%20Zapato.pdf)
+- [x] [2. Project Plan](https://github.com/AnimeMei/Zapato/blob/master/Documentations/2.%20Project%20Plan%20-%20Zapato.pdf)
+- [x] [3. Flowchart](https://github.com/AnimeMei/Zapato/blob/master/Documentations/3.%20Flowchart%20-%20Zapato.pdf)
+- [x] [4. UML](https://github.com/AnimeMei/Zapato/blob/master/Documentations/4.%20UML%20-%20Zapato.pdf)
+- [x] [5. Use Case](https://github.com/AnimeMei/Zapato/blob/master/Documentations/5.%20Use%20Case%20-%20Zapato.pdf)
+- [x] [6. Database Design](https://github.com/AnimeMei/Zapato/blob/master/Documentations/6.%20Database%20Design%20-%20Zapato.pdf)
+- [x] [7. Test Plan](https://github.com/AnimeMei/Zapato/blob/master/Documentations/7.%20Test%20Plan%20-%20Zapato.pdf)
 - [x] [8. User Manual and UI Layout](https://github.com/AnimeMei/Zapato/blob/master/Documentations/8.%20User%20Manual%20and%20UI%20Layout%20-%20Zapato.pdf)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!---
 ## User Stories
