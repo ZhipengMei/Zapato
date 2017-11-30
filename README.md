@@ -27,7 +27,8 @@ Documentations
 - [x] [5. Use Case](https://github.com/AnimeMei/Zapato/blob/master/Documentations/5.%20Use%20Case%20-%20Zapato.pdf)
 - [x] [6. Database Design](https://github.com/AnimeMei/Zapato/blob/master/Documentations/6.%20Database%20Design%20-%20Zapato.pdf)
 - [x] [7. Test Plan](https://github.com/AnimeMei/Zapato/blob/master/Documentations/7.%20Test%20Plan%20-%20Zapato.pdf)
-- [x] [8. User Manual and UI Layout](https://github.com/AnimeMei/Zapato/blob/master/Documentations/8.%20User%20Manual%20and%20UI%20Layout%20-%20Zapato.pdf)
+- [x] [8. User Manual ](https://github.com/AnimeMei/Zapato/blob/master/Documentations/8.%20User%20Manual%20-%20Zapato.pdf)
+- [x] [9. UI Layout](https://github.com/AnimeMei/Zapato/blob/master/Documentations/9.%20UI%20Layout%20-%20Zapato.pdf)
 
 
 
