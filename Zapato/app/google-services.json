@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "875857858494",
+    "firebase_url": "https://zapato-cd2d3.firebaseio.com",
+    "project_id": "zapato-cd2d3",
+    "storage_bucket": "zapato-cd2d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875857858494:android:1f2ebadf1912d66a",
+        "android_client_info": {
+          "package_name": "com.zapato.zapato"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "875857858494-n2m7rm9poc5cefrtuavlacr241esva82.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zapato.zapato",
+            "certificate_hash": "fa2e618199a73b4410a29ea9784be1d5130c9994"
+          }
+        },
+        {
+          "client_id": "875857858494-un362pbnjteuc2fq0tr3a8rob3q41s7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQpAtRi1ITz-Uawt6vhvRsXa4ssq4qNxY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "875857858494-un362pbnjteuc2fq0tr3a8rob3q41s7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
