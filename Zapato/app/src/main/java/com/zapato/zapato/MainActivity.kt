@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
                         LoginUserName.text = "NAME = " + firebaseUser!!.displayName!!.toString()
 
                         // Setting up Email into TextView.
-                        LoginUserEmail.text = "Email = " + firebaseUser!!.email!!.toString()
+                        LoginUserEmail.text = "Email = " + firebaseUser.email!!.toString()
 
                     } else {
                         Toast.makeText(this@MainActivity, "Something Went Wrong", Toast.LENGTH_LONG).show()
