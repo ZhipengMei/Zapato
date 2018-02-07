@@ -23,6 +23,9 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.zapato.zapato.User;
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +44,10 @@ class MainActivity : AppCompatActivity() {
     // TextView to Show Login User Email and Name.
     private lateinit var LoginUserName: TextView
     private lateinit var LoginUserEmail: TextView
+
+    // Write a message to the database
+    var database = FirebaseDatabase.getInstance()//.setPersistenceEnabled(true)
+    var my_users_Ref = database.getReference("users")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -109,6 +116,7 @@ class MainActivity : AppCompatActivity() {
                 val googleSignInAccount = googleSignInResult.signInAccount
 
                 FirebaseUserAuth(googleSignInAccount)
+
             }
 
         }
@@ -143,11 +151,16 @@ class MainActivity : AppCompatActivity() {
                         // Setting up Email into TextView.
                         LoginUserEmail.text = "Email = " + firebaseUser.email!!.toString()
 
+                        // saving new user's data to firebase database
+                        writeNewUser(LoginUserName.text.toString(), LoginUserEmail.text.toString());
+
                     } else {
                         Toast.makeText(this@MainActivity, "Something Went Wrong", Toast.LENGTH_LONG).show()
                     }
                 }
     }
+
+
 
     fun UserSignOutFunction() {
 
@@ -180,6 +193,13 @@ class MainActivity : AppCompatActivity() {
         // Request sing in code. Could be anything as you required.
         val RequestSignInCode = 7
     }
+
+    fun writeNewUser(username: String, email: String) {
+        val user = User(username, email)
+        val userId = firebaseAuth!!.currentUser!!.uid
+        my_users_Ref!!.child(userId).setValue(user)
+    }
+
 
 }
 
