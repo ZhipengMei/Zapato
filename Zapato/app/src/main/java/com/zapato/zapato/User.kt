@@ -10,6 +10,7 @@ class User {
 
     var name: String? = null
     var email: String? = null
+    var uid: String? = null
 
     constructor() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -18,5 +19,11 @@ class User {
     constructor(username: String?, email: String?) {
         this.name = username
         this.email = email
+    }
+
+    constructor(username: String?, email: String?, uid: String?) {
+        this.name = username
+        this.email = email
+        this.uid = uid
     }
 }

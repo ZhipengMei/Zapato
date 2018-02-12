@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var LoginUserEmail: TextView
 
     // Write a message to the database
-    var database = FirebaseDatabase.getInstance()//.setPersistenceEnabled(true)
-    var my_users_Ref = database.getReference("users")
+    var database = FirebaseDatabase.getInstance().setPersistenceEnabled(true)
+    var my_users_Ref = FirebaseDatabase.getInstance().getReference("users")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,9 +68,6 @@ class MainActivity : AppCompatActivity() {
         // Getting Firebase Auth Instance into firebaseAuth object.
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Hiding the TextView on activity start up time.
-        LoginUserEmail.visibility = View.GONE
-        LoginUserName.visibility = View.GONE
 
         // Creating and Configuring Google Sign In object.
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -135,24 +132,16 @@ class MainActivity : AppCompatActivity() {
                         // Getting Current Login user details.
                         val firebaseUser = firebaseAuth.currentUser
 
-                        // Showing Log out button.
-                        SignOutButton.visibility = View.VISIBLE
-
-                        // Hiding Login in button.
-                        signInButton.visibility = View.GONE
-
-                        // Showing the TextView.
-                        LoginUserEmail.visibility = View.VISIBLE
-                        LoginUserName.visibility = View.VISIBLE
-
-                        // Setting up name into TextView.
-                        LoginUserName.text = "NAME = " + firebaseUser!!.displayName!!.toString()
-
-                        // Setting up Email into TextView.
-                        LoginUserEmail.text = "Email = " + firebaseUser.email!!.toString()
-
                         // saving new user's data to firebase database
                         writeNewUser(LoginUserName.text.toString(), LoginUserEmail.text.toString());
+
+                        // creating a user object
+                        val user = User(firebaseUser!!.displayName!!.toString(), firebaseUser.email!!.toString(), firebaseUser.uid)
+
+                        // segue to tab_activity
+                        val intent = Intent(this, tap_activity::class.java)
+                        intent.putExtra("username", user.name)
+                        startActivity(intent)
 
                     } else {
                         Toast.makeText(this@MainActivity, "Something Went Wrong", Toast.LENGTH_LONG).show()
@@ -177,10 +166,6 @@ class MainActivity : AppCompatActivity() {
         // After logout Hiding sign out button.
         SignOutButton.visibility = View.GONE
 
-        // After logout setting up email and name to null.
-        LoginUserName.text = null
-        LoginUserEmail.text = null
-
         // After logout setting up login button visibility to visible.
         signInButton.visibility = View.VISIBLE
     }
@@ -199,6 +184,8 @@ class MainActivity : AppCompatActivity() {
         val userId = firebaseAuth!!.currentUser!!.uid
         my_users_Ref!!.child(userId).setValue(user)
     }
+
+
 
 
 }
