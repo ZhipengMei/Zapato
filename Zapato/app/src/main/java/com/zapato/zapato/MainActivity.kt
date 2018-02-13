@@ -3,6 +3,7 @@ package com.zapato.zapato
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -23,8 +24,7 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.*
 import com.zapato.zapato.User;
 
 class MainActivity : AppCompatActivity() {
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var LoginUserEmail: TextView
 
     // Write a message to the database
-    var database = FirebaseDatabase.getInstance().setPersistenceEnabled(true)
+    //var database = FirebaseDatabase.getInstance().setPersistenceEnabled(true)
     var my_users_Ref = FirebaseDatabase.getInstance().getReference("users")
 
 
@@ -68,7 +68,14 @@ class MainActivity : AppCompatActivity() {
         // Getting Firebase Auth Instance into firebaseAuth object.
         firebaseAuth = FirebaseAuth.getInstance()
 
+        createGoogleSignInOption()
 
+        // Adding Click listener to User Sign in Google button.
+        signInButton.setOnClickListener { UserSignInMethod() }
+
+    }
+
+    fun createGoogleSignInOption() {
         // Creating and Configuring Google Sign In object.
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -80,14 +87,6 @@ class MainActivity : AppCompatActivity() {
                 .enableAutoManage(this@MainActivity  /* OnConnectionFailedListener */) { }
                 .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
                 .build()
-
-
-        // Adding Click listener to User Sign in Google button.
-        signInButton.setOnClickListener { UserSignInMethod() }
-
-        // Adding Click Listener to User Sign Out button.
-        SignOutButton.setOnClickListener { UserSignOutFunction() }
-
     }
 
 
@@ -129,18 +128,10 @@ class MainActivity : AppCompatActivity() {
                 .addOnCompleteListener(this@MainActivity) { AuthResultTask ->
                     if (AuthResultTask.isSuccessful) {
 
-                        // Getting Current Login user details.
-                        val firebaseUser = firebaseAuth.currentUser
-
-                        // saving new user's data to firebase database
-                        writeNewUser(LoginUserName.text.toString(), LoginUserEmail.text.toString());
-
-                        // creating a user object
-                        val user = User(firebaseUser!!.displayName!!.toString(), firebaseUser.email!!.toString(), firebaseUser.uid)
+                        readData(my_users_Ref)
 
                         // segue to tab_activity
                         val intent = Intent(this, tap_activity::class.java)
-                        intent.putExtra("username", user.name)
                         startActivity(intent)
 
                     } else {
@@ -151,24 +142,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun UserSignOutFunction() {
 
-        // Sing Out the User.
-        firebaseAuth.signOut()
-
-        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback {
-            // Write down your any code here which you want to execute After Sign Out.
-
-            // Printing Logout toast message on screen.
-            Toast.makeText(this@MainActivity, "Logout Successfully", Toast.LENGTH_LONG).show()
-        }
-
-        // After logout Hiding sign out button.
-        SignOutButton.visibility = View.GONE
-
-        // After logout setting up login button visibility to visible.
-        signInButton.visibility = View.VISIBLE
-    }
 
     companion object {
 
@@ -179,10 +153,37 @@ class MainActivity : AppCompatActivity() {
         val RequestSignInCode = 7
     }
 
-    fun writeNewUser(username: String, email: String) {
+    fun writeNewUser(username: String, email: String, userId: String) {
         val user = User(username, email)
-        val userId = firebaseAuth!!.currentUser!!.uid
         my_users_Ref!!.child(userId).setValue(user)
+    }
+
+    fun readData(myRef: DatabaseReference) {
+        // Read from the database
+        myRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                if (dataSnapshot.exists()) {
+                    Log.d("Firebase_Zapato_Tag", "User Found")
+                } else {
+
+                    // Getting Firebase Auth Instance into firebaseAuth object.
+                    val firebaseUser = FirebaseAuth.getInstance().currentUser
+
+                    // creating a user object
+                    val user = User(firebaseUser!!.displayName!!.toString(), firebaseUser.email!!.toString(), firebaseUser.uid)
+
+                    // saving new user's data to firebase database
+                    writeNewUser(username = user.name!!, email = user.email!!, userId = user.uid!!)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Log.w("Firebase_Zapato_Tag", "Failed to read value.", error.toException())
+            }
+        })
     }
 
 
