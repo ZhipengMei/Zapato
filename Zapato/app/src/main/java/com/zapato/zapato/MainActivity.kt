@@ -41,10 +41,6 @@ class MainActivity : AppCompatActivity() {
     // Google Sign In button .
     private lateinit var signInButton: com.google.android.gms.common.SignInButton
 
-    // TextView to Show Login User Email and Name.
-    private lateinit var LoginUserName: TextView
-    private lateinit var LoginUserEmail: TextView
-
     // Write a message to the database
     //var database = FirebaseDatabase.getInstance().setPersistenceEnabled(true)
     var my_users_Ref = FirebaseDatabase.getInstance().getReference("users")
@@ -53,15 +49,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-        signInButton = findViewById<View>(R.id.sign_in_button) as SignInButton
-
-        SignOutButton = findViewById<View>(R.id.sign_out) as Button
-
-        LoginUserName = findViewById<View>(R.id.textViewName) as TextView
-
-        LoginUserEmail = findViewById<View>(R.id.textViewEmail) as TextView
 
         signInButton = findViewById<View>(R.id.sign_in_button) as com.google.android.gms.common.SignInButton
 
@@ -163,7 +150,7 @@ class MainActivity : AppCompatActivity() {
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
-                // whenever data at this location is updated.
+                // check if this user exist or not
                 if (dataSnapshot.exists()) {
                     Log.d("Firebase_Zapato_Tag", "User Found")
                 } else {
