@@ -16,11 +16,13 @@ class User {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
+    // constructor take in two parameter
     constructor(username: String?, email: String?) {
         this.name = username
         this.email = email
     }
 
+    // constructor take in three parameter
     constructor(username: String?, email: String?, uid: String?) {
         this.name = username
         this.email = email

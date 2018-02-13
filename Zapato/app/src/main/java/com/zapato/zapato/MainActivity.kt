@@ -25,7 +25,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.*
+import com.zapato.zapato.R.id.guest_button
 import com.zapato.zapato.User;
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,6 +61,12 @@ class MainActivity : AppCompatActivity() {
 
         // Adding Click listener to User Sign in Google button.
         signInButton.setOnClickListener { UserSignInMethod() }
+
+        // Guest Mode button bypass login page
+        guest_button.setOnClickListener { view ->
+            val intent = Intent(this, tap_activity::class.java)
+            startActivity(intent)
+        }
 
     }
 
