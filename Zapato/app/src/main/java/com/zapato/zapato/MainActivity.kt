@@ -113,6 +113,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    // sign user into Zapato's firebase with google's credential
     fun FirebaseUserAuth(googleSignInAccount: GoogleSignInAccount?) {
 
         val authCredential = GoogleAuthProvider.getCredential(googleSignInAccount!!.idToken, null)
@@ -133,14 +135,10 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this@MainActivity, "Something Went Wrong", Toast.LENGTH_LONG).show()
                     }
                 }
-    }
+    } // \FirebaseUserAuth
 
-
-
-
-
+    // default method
     companion object {
-
         // TAG is for show some tag logs in LOG screen.
         val TAG = "MainActivity"
 
@@ -148,11 +146,7 @@ class MainActivity : AppCompatActivity() {
         val RequestSignInCode = 7
     }
 
-    fun writeNewUser(username: String, email: String, userId: String) {
-        val user = User(username, email)
-        my_users_Ref!!.child(userId).setValue(user)
-    }
-
+    // find out if user existed already, true: do nothing, else: write new user data to the database
     fun readData(myRef: DatabaseReference) {
         // Read from the database
         myRef.addValueEventListener(object : ValueEventListener {
@@ -181,8 +175,11 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-
-
+    // writing data to the database
+    fun writeNewUser(username: String, email: String, userId: String) {
+        val user = User(username, email)
+        my_users_Ref!!.child(userId).setValue(user)
+    }
 
 }
 

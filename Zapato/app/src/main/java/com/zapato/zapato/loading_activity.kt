@@ -24,13 +24,20 @@ class loading_activity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loading)
 
+        oneTimeCode()
+
+    }
+
+    // this method only run once when the app first launch to prompt login or use as guest mode
+    fun oneTimeCode() {
         // Getting Firebase Auth Instance into firebaseAuth object.
         firebaseAuth = FirebaseAuth.getInstance()
 
 
+        // PreferenceManager takes care of saving state to the device
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         if (!prefs.getBoolean("firstTime", false)) {
-            // <---- run your one time code here
+            // run your "one time" code here
             Log.d("firstLaunch", "firstLaunch")
 
             // Getting Current Login user details.
@@ -55,6 +62,6 @@ class loading_activity: AppCompatActivity() {
             val intent = Intent(this, tap_activity::class.java)
             startActivity(intent)
         }
-
     }
+
 }
