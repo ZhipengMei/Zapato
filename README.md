@@ -30,8 +30,13 @@ Documentations
 - [x] [8. User Manual ](https://github.com/AnimeMei/Zapato/blob/master/Documentations/8.%20User%20Manual%20-%20Zapato.pdf)
 - [x] [9. UI Layout](https://github.com/AnimeMei/Zapato/blob/master/Documentations/9.%20UI%20Layout%20-%20Zapato.pdf)
 
+## Video Walkthrough 
 
+Here's a walkthrough of implemented user stories:
 
+ <img src='https://github.com/ZhipengMei/Zapato/blob/master/Logo/zapato_gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/). 
 
 
 
