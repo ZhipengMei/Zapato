@@ -19,10 +19,10 @@ class CustomAdapter: BaseAdapter {
 //    lateinit var img: IntArray
     var con: Context
 //    var shoe: ArrayList<Shoe>
-    var shoe: ArrayList<String>
+    var shoe: ArrayList<Shoe>
     lateinit var inflator: LayoutInflater
 
-    constructor(con: Context, shoe: ArrayList<String>) {
+    constructor(con: Context, shoe: ArrayList<Shoe>) {
         this.con = con
         this.shoe = shoe
         inflator = con.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -41,7 +41,9 @@ class CustomAdapter: BaseAdapter {
         rv = inflator.inflate(R.layout.row_layout, null)
         holder.tv = rv.findViewById<TextView>(R.id.textView1)
         holder.iv = rv.findViewById<ImageView>(R.id.imageView1)
-        holder.tv.setText(shoe[p0].toString())
+        holder.tv2 = rv.findViewById<TextView>(R.id.textView2)
+        holder.tv.setText((shoe[p0]).name.toString())
+        holder.tv2.setText((shoe[p0]).size.toString())
 //        holder.iv.setImageResource(img[p0])
 
         rv.setOnClickListener(object: View.OnClickListener {
@@ -69,6 +71,7 @@ class CustomAdapter: BaseAdapter {
     public class Holder {
         lateinit var tv: TextView
         lateinit var iv: ImageView
+        lateinit var tv2: TextView
     }
 
 }

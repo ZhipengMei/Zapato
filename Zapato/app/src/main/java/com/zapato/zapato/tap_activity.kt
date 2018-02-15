@@ -10,7 +10,10 @@ import android.os.Bundle
 import android.os.Message
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.view.Window
 import android.widget.GridView
 import android.widget.Toast
 import com.google.android.gms.auth.api.Auth
@@ -37,7 +40,7 @@ class tap_activity : AppCompatActivity() {
 //    var name: Array<String> = arrayOf("Coffee Pot", "Espresso", "French Fries", "Honey", "Strawberry Ice Cream", "Sugar Cubes")
     lateinit var gv: GridView
     lateinit var cl: CustomAdapter
-    var shoeList: ArrayList<String> = arrayListOf()
+    var shoeList: ArrayList<Shoe> = arrayListOf()
 
 
     // Others: testing
@@ -46,6 +49,9 @@ class tap_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab)
+
+//        setSupportActionBar(findViewById(R.id.my_toolbar))
+
 
         // setup tap host
         tab_host.setup()
@@ -90,17 +96,10 @@ class tap_activity : AppCompatActivity() {
 
         add_button.setOnClickListener { loadDatabase(ref) }
 
-        //GridView
-        //cl = CustomAdapter(con, img, name)
-//        cl = CustomAdapter(con, shoe_title_list)
-//        grid_view.adapter = cl
 
 
         // tap 3
-        Log.d("Check", "omg this is tap 3")
         loadData()
-//        cl = CustomAdapter(con, shoe_title_list)
-//        grid_view.adapter = cl
 
 
     } // \onCreate
@@ -110,7 +109,8 @@ class tap_activity : AppCompatActivity() {
         // create a unique ID
         val key = firebaseData.push().key
         // write new data under the unique ID
-        firebaseData.child(key).child("name").setValue("This is a name.")
+        val newShoe = Shoe("Nike", 9)
+        firebaseData.child(key).setValue(newShoe)
     }
 
     fun createGoogleSignInOption() {
@@ -148,17 +148,24 @@ class tap_activity : AppCompatActivity() {
             }
 
             override fun onDataChange(snapshot: DataSnapshot?) {
+                // clear the arraylist then load new data
+                shoeList.clear()
                 val children = snapshot!!.children
                 children.forEach {
                     println(it.toString())
-                    val serialized: Shoe = it.getValue(Shoe::class.java)!!
-                    shoeList.add(serialized.toString())
+                    val serialized: parseShoe = it.getValue(parseShoe::class.java)!!
+                    shoeList.add(serialized.toShoe())
                 }
+
+                //GridView
                 cl = CustomAdapter(con, shoeList)
                 grid_view.adapter = cl
             }
+
         })
     }
+
+
 
     // user persist state check
     fun isUserSignIn() {
@@ -173,10 +180,9 @@ class tap_activity : AppCompatActivity() {
             username_textview.visibility = View.GONE
             logout_button.text = "Sign In"
         }
+    }
 
-
-
-//        fun do_something() {
+    //        fun do_something() {
 //
 //            val childEventListener = object : ChildEventListener {
 //                override fun onChildAdded(dataSnapshot: DataSnapshot?, previousChildName: String?) {
@@ -185,7 +191,7 @@ class tap_activity : AppCompatActivity() {
 //                    val shoe_title = dataSnapshot!!.getValue(Message::class.java)
 //                    shoe_title_list.add(shoe_title!!)
 //                }
-//
+
 //                override fun onChildChanged(dataSnapshot: DataSnapshot?, previousChildName: String?) {
 //                    Log.e(TAG, "onChildChanged:" + dataSnapshot!!.key)
 //
@@ -213,12 +219,26 @@ class tap_activity : AppCompatActivity() {
 //            }
 //        }
 
-
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
     }
 
-
-
-
-
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        var msg = ""
+        //switch statement
+        if (item != null) {
+            when (item.itemId) {
+                R.id.delete -> msg = "Delete"
+                R.id.search -> msg = "Search"
+                R.id.setting -> msg = "Setting"
+                R.id.edit -> msg = "Edit"
+                R.id.refresh -> loadData()
+                R.id.logout -> msg = "Logout"
+            }
+            Toast.makeText(this, msg + " Checked", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
 }
