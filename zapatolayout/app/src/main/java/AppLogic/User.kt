@@ -1,4 +1,4 @@
-package com.zapato.zapatolayout
+package AppLogic
 
 import com.google.firebase.database.IgnoreExtraProperties
 

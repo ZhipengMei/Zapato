@@ -28,13 +28,6 @@
                 android:layout_height="match_parent">
 
                 <!--Tab 1-->
-                <RelativeLayout
-                    android:id="@+id/tab_one"
-                    android:text="@string/buy_now"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="#ffc916">
 
                     <Button
                         android:id="@+id/logout_button"
@@ -66,7 +59,6 @@
                     </GridView>
 
 
-                </RelativeLayout>
 
                 <!--Tab 2-->
                 <RelativeLayout
