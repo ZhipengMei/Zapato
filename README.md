@@ -15,6 +15,7 @@ Table of contents
   * [Zapato](#zapato)
   * [Table of content](#table-of-contents)
   * [Documentations](#documentations)
+  * [To Do List](#to-do-list)
  
 
 Documentations
@@ -37,6 +38,31 @@ Here's a walkthrough of implemented user stories:
  <img src='https://github.com/ZhipengMei/Zapato/blob/master/Logo/zapato_gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/). 
+
+To Do List
+==========
+* Helen
+<img src='https://github.com/ZhipengMei/Zapato/blob/matt_uiux/UI/artboards/Home.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+* Nhi
+<img src='https://github.com/ZhipengMei/Zapato/blob/matt_uiux/UI/artboards/Product%20Detail%20-%20Buy%20Now.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+* Adrian & James
+(Link Database with Login)
+<img src='https://github.com/ZhipengMei/Zapato/blob/matt_uiux/UI/artboards/Login.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/matt_uiux/UI/artboards/Register.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
