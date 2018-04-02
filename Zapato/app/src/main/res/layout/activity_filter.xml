@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zapato.zapato.Filter">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/GenderTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Gender"
+            android:textColor="@android:color/black" />
+
+        <ToggleButton
+            android:id="@+id/Male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="Male"
+            android:textOff="Male"
+            android:textOn="Male" />
+
+        <ToggleButton
+            android:id="@+id/Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:text="Female"
+            android:textOff="Female"
+            android:textOn="Female" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:fontFamily="@font/roboto"
+            android:text="Type"
+            android:textColor="@android:color/black" />
+
+        <ToggleButton
+            android:id="@+id/Running"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="Running"
+            android:textOff="Running"
+            android:textOn="Running" />
+
+        <ToggleButton
+            android:id="@+id/Basketball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:text="Basketball"
+            android:textOff="Basketball"
+            android:textOn="Basketball" />
+
+        <ToggleButton
+            android:id="@+id/Soccer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:text="Soccer"
+            android:textOff="Soccer"
+            android:textOn="Soccer" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:fontFamily="@font/roboto"
+            android:text="Brand"
+            android:textColor="@android:color/black" />
+
+        <ToggleButton
+            android:id="@+id/Nike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:text="Nike"
+            android:textOff="Nike"
+            android:textOn="Nike" />
+
+        <ToggleButton
+            android:id="@+id/Adidas"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:text="Adidas"
+            android:textOff="Adidas"
+            android:textOn="Adidas" />
+
+        <ToggleButton
+            android:id="@+id/Puma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="5"
+            android:text="Puma"
+            android:textOff="Puma"
+            android:textOn="Puma" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:fontFamily="@font/roboto"
+            android:text="Color"
+            android:textColor="@android:color/black" />
+
+        <ToggleButton
+            android:id="@+id/White"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="7"
+            android:text="White"
+            android:textOff="White"
+            android:textOn="White" />
+
+        <ToggleButton
+            android:id="@+id/Black"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="7"
+            android:text="Black"
+            android:textOff="Black"
+            android:textOn="Black" />
+
+        <ToggleButton
+            android:id="@+id/Red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="7"
+            android:text="Red"
+            android:textOff="Red"
+            android:textOn="Red" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="9"
+            android:fontFamily="@font/roboto"
+            android:text="Clear"
+            android:textColor="@android:color/black" />
+
+    </GridLayout>
+</android.support.constraint.ConstraintLayout>
