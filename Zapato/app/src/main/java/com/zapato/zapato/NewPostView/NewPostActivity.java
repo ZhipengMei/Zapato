@@ -1,9 +1,11 @@
-package com.zapato.zapato;
+package com.zapato.zapato.NewPostView;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.zapato.zapato.R;
 
 public class NewPostActivity extends AppCompatActivity {
 

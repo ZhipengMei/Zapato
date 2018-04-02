@@ -20,11 +20,11 @@
         </activity>
 
         <activity
-            android:name=".SearchActivity"
+            android:name=".SearchView.SearchActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name=".NewPostActivity"
+            android:name=".NewPostView.NewPostActivity"
             android:parentActivityName=".MainActivity"/>
 
     </application>

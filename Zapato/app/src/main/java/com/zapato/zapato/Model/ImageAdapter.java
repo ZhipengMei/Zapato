@@ -1,4 +1,4 @@
-package com.zapato.zapato;
+package com.zapato.zapato.Model;
 
 import android.content.Context;
 import android.util.Log;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.zapato.zapato.R;
 
 import java.util.ArrayList;
 

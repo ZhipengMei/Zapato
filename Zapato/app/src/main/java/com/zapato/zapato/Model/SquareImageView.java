@@ -1,4 +1,4 @@
-package com.zapato.zapato;
+package com.zapato.zapato.Model;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

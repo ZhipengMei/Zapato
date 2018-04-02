@@ -10,6 +10,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.zapato.zapato.HomeView.Tab1Fragment;
+import com.zapato.zapato.HomeView.Tab2Fragment;
+import com.zapato.zapato.HomeView.Tab3Fragment;
+import com.zapato.zapato.Model.SectionsPageAdapter;
+import com.zapato.zapato.NewPostView.NewPostActivity;
+import com.zapato.zapato.SearchView.SearchActivity;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {

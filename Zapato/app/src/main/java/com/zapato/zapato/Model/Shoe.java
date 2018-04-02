@@ -1,4 +1,4 @@
-package com.zapato.zapato;
+package com.zapato.zapato.Model;
 
 /**
  * Created by agustincards on 3/21/18.

@@ -1,4 +1,4 @@
-package com.zapato.zapato;
+package com.zapato.zapato.HomeView;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +15,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.zapato.zapato.Model.ImageAdapter;
+import com.zapato.zapato.R;
+import com.zapato.zapato.Model.Shoe;
 
 import java.util.ArrayList;
 
