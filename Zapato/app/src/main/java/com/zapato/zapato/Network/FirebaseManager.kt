@@ -3,6 +3,8 @@ package com.zapato.zapato.Network
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.res.AssetManager
+import android.net.Uri
 import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
@@ -18,7 +20,17 @@ import android.support.annotation.NonNull
 import com.google.android.gms.auth.api.credentials.Credential
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.*
+import com.google.firebase.storage.FirebaseStorage
 import com.zapato.zapato.LoginView.Login
+import com.zapato.zapato.Model.Shoe
+import com.zapato.zapato.R
+import com.google.firebase.storage.StorageReference
+import java.io.File
+import com.google.firebase.storage.UploadTask
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.gms.tasks.OnFailureListener
+import java.io.FileInputStream
+import java.io.InputStream
 
 
 /**
@@ -28,9 +40,15 @@ class FirebaseManager {
 
     // Firebase Auth Object.
     lateinit var firebaseAuth: FirebaseAuth
-    // Database reference
+
+    // Database reference to "users" endpoint
     var my_users_Ref = FirebaseDatabase.getInstance().getReference("users")
 
+    // Database reference to shoes endpoint
+    var shoe_ref = FirebaseDatabase.getInstance().getReference("shoes")
+
+    // Create a storage reference from our app to "ShoeImages" endpoint
+    var storageRef = FirebaseStorage.getInstance().getReference("ShoeImages")
 
 
     // MARK - Find out if user existed already, true: do nothing, else: write new user data to the database
@@ -64,6 +82,7 @@ class FirebaseManager {
     }
 
 
+
     // MARK - Write new user data to the database
 
     fun writeNewUser(username: String, email: String, userId: String) {
@@ -75,10 +94,56 @@ class FirebaseManager {
 
 
 
-    // MARK - Return Current User
+    // MARK - Return Current Logged in User
 
     fun CurrenUser(): FirebaseUser? {
         return FirebaseAuth.getInstance().currentUser
+    }
+
+
+
+    // MARK - Upload new shoe object to databse
+
+    fun uploadShoeObject(newShoe: Shoe, imageFile: InputStream) {
+
+        Log.d("Firebase_Zapato_Tag", "Adding new shoe data to database.")
+
+        // create a unique ID
+        val key = shoe_ref.push().key
+
+        // upload shoe object to database
+        shoe_ref.child(CurrenUser()!!.uid).child(key).setValue(newShoe)
+
+        // upload shoe's image file to storage with the same key
+        uploadImageFile(newShoe.name, key, imageFile)
+    }
+
+
+
+    // MARK - upload image file to Firebase storage
+
+    fun uploadImageFile(shoeName: String, key: String, imageFileInputStream: InputStream) {
+        Log.d("Firebase_Zapato_Tag", "Here")
+
+        //point the storage reference to the correct end point
+        storageRef = storageRef.child(key).child(shoeName)
+
+        //upload file to storage
+        var uploadTask = storageRef.putStream(imageFileInputStream)
+
+        // task listener on upload progress
+        uploadTask.addOnFailureListener(OnFailureListener {
+            // Handle unsuccessful uploads
+            Log.d("Firebase_Zapato_Tag", "Error: Upload Shoe Image Failed")
+        }).addOnSuccessListener(OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
+            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+            val downloadUrl = taskSnapshot.downloadUrl
+
+            Log.d("Firebase_Zapato_Tag", downloadUrl.toString())
+
+            // upload the url to shoe object database
+            shoe_ref.child(CurrenUser()!!.uid).child(key).child("shoeImageUrl").setValue(downloadUrl.toString())
+        })
     }
 
 

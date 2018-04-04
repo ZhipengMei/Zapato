@@ -36,9 +36,9 @@ public class Tab2Fragment extends Fragment {
    @Override
    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       Log.d(TAG, "onCreateView: Starting.");
-      mShoeList = new ArrayList<Shoe>();
-      mImageAdapter = new ImageAdapter(getContext(), mShoeList);
-      populateArray();
+//      mShoeList = new ArrayList<Shoe>();
+//      mImageAdapter = new ImageAdapter(getContext(), mShoeList);
+//      populateArray();
 
       View view =  inflater.inflate(R.layout.product_browse, container, false);
       gridView = (GridView) view.findViewById(R.id.product_browse);
@@ -73,7 +73,7 @@ public class Tab2Fragment extends Fragment {
                i++;
                System.out.printf("Shoe Name: %s, Size %d\n", name, size);
                System.out.println("shoeList size inside loop: " + mShoeList.size());
-               myShoe = new Shoe(name, size, drawID);
+               //myShoe = new Shoe(name, size, drawID);
                mShoeList.add(myShoe);
                mImageAdapter.notifyDataSetChanged();
 

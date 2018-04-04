@@ -17,6 +17,8 @@ import java.util.ArrayList;
  * Created by agustincards on 3/6/18.
  */
 
+//TODO uncomment all of drawableId
+
 public class ImageAdapter extends BaseAdapter {
    private static final String TAG = "ImageAdapter";
 
@@ -45,8 +47,10 @@ public class ImageAdapter extends BaseAdapter {
 
    @Override
    public long getItemId(int i) {
-      System.out.println("getting drawable: "+shoeList.get(i).drawableId);
-      return shoeList.get(i).drawableId;
+      //System.out.println("getting drawable: "+shoeList.get(i).drawableId);
+      //return shoeList.get(i).drawableId;
+       //TODO remove return 1 once FirebaseManager finish fetching from database
+       return 1;
    }
 
 
@@ -71,8 +75,9 @@ public class ImageAdapter extends BaseAdapter {
 
       Shoe shoe = getItem(i);
 
-      picture.setImageResource(shoe.drawableId);
-      name.setText(shoe.name);
+      //TODO uncomment temporary, undo later
+      //picture.setImageResource(shoe.drawableId);
+      //name.setText(shoe.name);
 
       return v;
    }
