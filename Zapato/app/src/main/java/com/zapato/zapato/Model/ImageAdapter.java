@@ -40,20 +40,20 @@ public class ImageAdapter extends BaseAdapter {
 
    @Override
    public int getCount() {
-      System.out.println("shoeList size in getCount(): "+shoeList.size());
+      //System.out.println("shoeList size in getCount(): "+shoeList.size());
       return shoeList.size();
    }
 
    @Override
    public Shoe getItem(int i) {
-      System.out.println("getting Item: "+i);
+      //System.out.println("getting Item: "+i);
       return shoeList.get(i);
    }
 
    @Override
    public long getItemId(int i) {
       //System.out.println("getting drawable: "+shoeList.get(i).drawableId);
-//      return shoeList.get(i).drawableId;
+      //return shoeList.get(i).drawableId;
        //TODO remove return 1 once FirebaseManager finish fetching from database
       //TODO I do not know what is getItemId used for. - Adrian
        return 1;
@@ -63,7 +63,7 @@ public class ImageAdapter extends BaseAdapter {
    // create a new ImageView for each item referenced by the Adapter
    @Override
    public View getView(int i, View view, ViewGroup viewGroup) {
-      Log.d(TAG,"inside getView()");
+      //Log.d(TAG,"inside getView()");
       View v = view;
       ImageView picture;
       TextView name;
@@ -74,7 +74,6 @@ public class ImageAdapter extends BaseAdapter {
          v.setTag(R.id.picture, v.findViewById(R.id.picture));
          v.setTag(R.id.text, v.findViewById(R.id.text));
          v.setTag(R.id.price, v.findViewById(R.id.price));
-
       }
 
       picture = (ImageView) v.getTag(R.id.picture);
@@ -83,6 +82,7 @@ public class ImageAdapter extends BaseAdapter {
 
       Shoe shoe = getItem(i);
 
+      Log.d(TAG,shoe.shoeImageUrl);
       // download image using url with Glide media framework
       Glide.with(thisContext).load(shoe.shoeImageUrl).into(picture);
       name.setText(shoe.name);

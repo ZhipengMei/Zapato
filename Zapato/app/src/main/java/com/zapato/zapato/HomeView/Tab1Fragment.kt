@@ -18,10 +18,6 @@ import kotlinx.android.synthetic.main.grid_item.view.*
 
 import java.util.ArrayList
 
-/**
- * Created by agustincards on 2/28/18.
- */
-
 class Tab1Fragment : Fragment() {
     private var gridView: GridView? = null
     private var mShoeList: ArrayList<Shoe>? = null
@@ -34,11 +30,10 @@ class Tab1Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.d(TAG, "onCreateView: Starting.")
 
-        val thisView = inflater!!.inflate(R.layout.product_browse, container, false)
+        var thisView = inflater!!.inflate(R.layout.product_browse, container, false)
 
-        //TODO testing fetchAllShoes function
-        FirebaseManager().fetchAllShoes({
-            // override mShoeList with returned from database
+        //fetch Buy Now function
+        FirebaseManager().fetch(FirebaseManager().buynow_ref, {
             mShoeList = it
             //parse mShoeList data into ImageAdapter
             mImageAdapter = ImageAdapter(this.context, mShoeList!!);
@@ -47,9 +42,36 @@ class Tab1Fragment : Fragment() {
             gridView!!.adapter = mImageAdapter
             //optional
             gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
-
         })
+
+//        //fetch Buy Now function
+//        FirebaseManager().fetchBuyNow({
+//            mShoeList = it
+//            //parse mShoeList data into ImageAdapter
+//            mImageAdapter = ImageAdapter(this.context, mShoeList!!);
+//
+//            gridView = thisView.findViewById<View>(R.id.product_browse) as GridView
+//            gridView!!.adapter = mImageAdapter
+//            //optional
+//            gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
+//        })
+
         return thisView
     }
+
+
+//    //fetch All Shoes function
+//    fun configureFetchAllShoe() {
+//        FirebaseManager().fetchAllShoes({
+//            // override mShoeList with returned from database
+//            mShoeList = it
+//            //parse mShoeList data into ImageAdapter
+//            mImageAdapter = ImageAdapter(this.context, mShoeList!!);
+//
+//            gridView!!.adapter = mImageAdapter
+//            //optional
+//            gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
+//        })
+//    }
 
 }
