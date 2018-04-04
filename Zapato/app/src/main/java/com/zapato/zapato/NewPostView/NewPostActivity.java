@@ -14,16 +14,16 @@
 ////      super.onCreate(savedInstanceState);
 ////      setContentView(R.layout.activity_new_post);
 ////
-////      // my_child_toolbar is defined in the layout file
-////      Toolbar myChildToolbar =
-////              (Toolbar) findViewById(R.id.toolbar_newpost);
-////      setSupportActionBar(myChildToolbar);
-////
-////      // Get a support ActionBar corresponding to this toolbar
-////      ActionBar ab = getSupportActionBar();
-////
-////      // Enable the Up button
-////      ab.setDisplayHomeAsUpEnabled(true);
+//      // my_child_toolbar is defined in the layout file
+//      Toolbar myChildToolbar =
+//              (Toolbar) findViewById(R.id.toolbar_newpost);
+//      setSupportActionBar(myChildToolbar);
+//
+//      // Get a support ActionBar corresponding to this toolbar
+//      ActionBar ab = getSupportActionBar();
+//
+//      // Enable the Up button
+//      ab.setDisplayHomeAsUpEnabled(true);
 ////
 ////      //
 ////

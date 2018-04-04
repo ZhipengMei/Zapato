@@ -41,11 +41,6 @@ class Login: AppCompatActivity() {
     // Google Sign In button .
     private lateinit var signInButton: com.google.android.gms.common.SignInButton
 
-    // Write a message to the database
-    //var database = FirebaseDatabase.getInstance().setPersistenceEnabled(true)
-    //var my_users_Ref = FirebaseDatabase.getInstance().getReference("users")
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -59,8 +54,6 @@ class Login: AppCompatActivity() {
 
         // Adding Click listener to User Sign in Google button.
         signInButton.setOnClickListener { UserSignInMethod() }
-
-
     }
 
     fun createGoogleSignInOption() {

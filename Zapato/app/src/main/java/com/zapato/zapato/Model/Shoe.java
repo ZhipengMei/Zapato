@@ -1,5 +1,6 @@
 package com.zapato.zapato.Model;
 
+import com.google.firebase.database.DataSnapshot;
 import com.zapato.zapato.Network.FirebaseManager;
 
 import java.net.URL;
@@ -12,18 +13,18 @@ public class Shoe {
 
     public String brand;
     public String name;
-    public String sellerID;  // sellerID is used for fetching seller's info
     public double size;
     public double price;
-    public String gender;    //male, female, unisex
-    public String shoeType;  //running, basketball, soccer
-    public String shoeColor; //red, black
-    public String shoeImageUrl; //red, black
+    public String gender;       //male, female, unisex
+    public String shoeType;     //running, basketball, soccer
+    public String shoeColor;    //red, black
+    public String sellerID;     // sellerID is used for fetching seller's info later
+    public String shoeID;       // each shoe has its own unique ID
+    public String shoeImageUrl; //url to Firebase storage
 
-
-    public Shoe(String shoeName, String sellerID, double shoeSize, double shoePrice){
+    //constructor with basic shoe info input
+    public Shoe(String shoeName, double shoeSize, double shoePrice){
         this.name = shoeName;
-        this.sellerID = sellerID;
         this.size = shoeSize;
         this.price = shoePrice;
 
@@ -32,22 +33,22 @@ public class Shoe {
         this.shoeType = "Running";
         this.gender = "Unisex";
         this.shoeColor = "Red";
+    }
 
-   }
+    //constructor with firebase's returned DataSnapshot input
+    public Shoe(DataSnapshot snapshot) {
+        this.name = snapshot.child("name").getValue().toString();
+        this.sellerID = snapshot.child("sellerID").getValue().toString();
+        this.shoeID = snapshot.child("shoeID").getValue().toString();
+        this.name = snapshot.child("name").getValue().toString();
+        this.brand = snapshot.child("brand").getValue().toString();
+        this.gender = snapshot.child("gender").getValue().toString();
+        this.shoeType = snapshot.child("shoeType").getValue().toString();
+        this.shoeImageUrl = snapshot.child("shoeImageUrl").getValue().toString();
+        //convert snapshot value to Double
+        this.size = Double.valueOf(String.valueOf(snapshot.child("size").getValue()));
+        this.price = Double.valueOf(String.valueOf(snapshot.child("price").getValue()));
+    }
 
-//    public Shoe(String shoeName, String sellerID, int shoeSize, int shoePrice, String shoeImage){
-//        this.name = shoeName;
-//        this.sellerID = sellerID;
-//        this.size = shoeSize;
-//        this.price = shoePrice;
-//        this.shoeImageUrl = shoeImage;
-//
-//        //TODO temporary default attribute,
-//        this.gender = "male";
-//        this.shoeType = "Running";
-//        this.gender = "Unisex";
-//        this.shoeColor = "Red";
-//
-//    }
 
 }

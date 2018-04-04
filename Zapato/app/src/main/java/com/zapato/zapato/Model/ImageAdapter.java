@@ -1,5 +1,7 @@
 package com.zapato.zapato.Model;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +11,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.zapato.zapato.HomeView.Tab1Fragment;
+import com.zapato.zapato.Network.FirebaseManager;
 import com.zapato.zapato.R;
 
 import java.util.ArrayList;
@@ -24,13 +29,13 @@ public class ImageAdapter extends BaseAdapter {
 
    private ArrayList<Shoe> shoeList;
    private LayoutInflater mInflater;
+   private Context thisContext; // IMPORTANT
 
    public ImageAdapter(Context context, ArrayList<Shoe> list) {
       Log.d(TAG, "constructor: Starting.");
       shoeList = list;
       mInflater = LayoutInflater.from(context);
-      System.out.println("shoeList size in Image Adapter constructor: "+shoeList.size());
-
+      this.thisContext = context;
    }
 
    @Override
@@ -48,8 +53,9 @@ public class ImageAdapter extends BaseAdapter {
    @Override
    public long getItemId(int i) {
       //System.out.println("getting drawable: "+shoeList.get(i).drawableId);
-      //return shoeList.get(i).drawableId;
+//      return shoeList.get(i).drawableId;
        //TODO remove return 1 once FirebaseManager finish fetching from database
+      //TODO I do not know what is getItemId used for. - Adrian
        return 1;
    }
 
@@ -67,17 +73,21 @@ public class ImageAdapter extends BaseAdapter {
          v = mInflater.inflate(R.layout.grid_item, viewGroup, false);
          v.setTag(R.id.picture, v.findViewById(R.id.picture));
          v.setTag(R.id.text, v.findViewById(R.id.text));
+         v.setTag(R.id.price, v.findViewById(R.id.price));
 
       }
 
       picture = (ImageView) v.getTag(R.id.picture);
       name = (TextView) v.getTag(R.id.text);
+      price = (TextView) v.getTag(R.id.price);
 
       Shoe shoe = getItem(i);
 
-      //TODO uncomment temporary, undo later
-      //picture.setImageResource(shoe.drawableId);
-      //name.setText(shoe.name);
+      // download image using url with Glide media framework
+      Glide.with(thisContext).load(shoe.shoeImageUrl).into(picture);
+      name.setText(shoe.name);
+      // convert double to int to strings
+      price.setText("$"+new Integer((int) shoe.price).toString());
 
       return v;
    }
