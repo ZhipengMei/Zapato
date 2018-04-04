@@ -108,10 +108,9 @@ class Login: AppCompatActivity() {
         this.firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener { task: Task<AuthResult> ->
             if (task.isSuccessful) {
                 //Registration OK
-                //val firebaseUser = this.firebaseAuth.currentUser!!
 
-                //readData(my_users_Ref)
-                FirebaseManager().checkUserData(FirebaseManager().my_users_Ref)
+                // check if user profile data already in database by using reference with uid end point
+                FirebaseManager().checkUserData(FirebaseManager().my_users_Ref.child(FirebaseManager().CurrenUser().toString()))
 
                 // segue to tab_activity
                 val intent = Intent(this, Home::class.java)

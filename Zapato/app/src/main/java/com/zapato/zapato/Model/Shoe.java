@@ -12,7 +12,7 @@ import java.net.URL;
 
 public class Shoe implements Serializable {
 
-    //public String shoeCondition;
+    public String shoeCondition;
     public String brand;
     public String name;
     public double size;
@@ -35,6 +35,7 @@ public class Shoe implements Serializable {
         this.shoeType = "Running";
         this.gender = "Unisex";
         this.shoeColor = "Red";
+        this.shoeCondition = "New";
     }
 
     //constructor with firebase's returned DataSnapshot input
@@ -47,6 +48,7 @@ public class Shoe implements Serializable {
         this.gender = snapshot.child("gender").getValue().toString();
         this.shoeType = snapshot.child("shoeType").getValue().toString();
         this.shoeImageUrl = snapshot.child("shoeImageUrl").getValue().toString();
+        this.shoeCondition = snapshot.child("shoeCondition").getValue().toString();
         //convert snapshot value to Double
         this.size = Double.valueOf(String.valueOf(snapshot.child("size").getValue()));
         this.price = Double.valueOf(String.valueOf(snapshot.child("price").getValue()));

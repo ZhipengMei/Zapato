@@ -68,20 +68,19 @@ class FirebaseManager {
     // MARK - Find out if user existed already, true: do nothing, else: write new user data to the database
 
     fun checkUserData(myRef: DatabaseReference) {
+
         // Read from the database
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // check if this user exist or not
                 if (dataSnapshot.exists()) {
                     Log.d("Firebase_Zapato_Tag", "User Found")
+                    Log.d("Firebase_Zapato_Tag", dataSnapshot.value.toString())
                 } else {
-
                     // Getting Firebase Auth Instance into firebaseAuth object.
                     val firebaseUser = CurrenUser()
-
                     // creating a new user object
                     val newUser = User(firebaseUser!!.displayName!!.toString(), firebaseUser.email!!.toString(), firebaseUser.uid)
-
                     // saving new user's data to database
                     writeNewUser(newUser)
                 }
@@ -234,5 +233,24 @@ class FirebaseManager {
     }
 
 
+    // MARK - Fetch single user profile data
+
+    fun fetchSingleUser(myRef: DatabaseReference, callback: (User) -> Unit) {
+        // Read from the database
+        myRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // check if this user exist
+                if (dataSnapshot.exists()) {
+                    Log.d("Firebase_Zapato_Tag", "User Found")
+                    Log.d("Firebase_Zapato_Tag", dataSnapshot.value.toString())
+                    callback(User(dataSnapshot))
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Log.w("Firebase_Zapato_Tag", "Failed to read value.", error.toException())
+            }
+        })
+    }
 
 }

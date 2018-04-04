@@ -1,5 +1,7 @@
 package com.zapato.zapato.Model
 
+import com.google.firebase.database.DataSnapshot
+
 /**
  * Created by adrian on 4/2/18.
  */
@@ -25,6 +27,11 @@ class User {
         this.name = username
         this.email = email
         this.uid = uid
+    }
+
+    constructor(dataSnapshot: DataSnapshot) {
+        this.name = dataSnapshot.child("name").value.toString()
+        this.email = dataSnapshot.child("email").value.toString()
     }
 
 }
