@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.zapato.zapato.AccountView.MyAccount;
 import com.zapato.zapato.HomeView.Tab1Fragment;
 import com.zapato.zapato.HomeView.Tab2Fragment;
 import com.zapato.zapato.HomeView.Tab3Fragment;
@@ -19,13 +20,12 @@ import com.zapato.zapato.SearchView.SearchActivity;
 
 import java.util.ArrayList;
 
+//TODO: MainActivity is NOT HomeActivity. Make bottom nav bar available for ALL activities, not just HOME.
+
 public class MainActivity extends AppCompatActivity {
 
    private static final String TAG = "MainActivity";
 
-   private SectionsPageAdapter mSectionsPageAdapter;
-   private ViewPager mViewPager;
-   private ArrayList<LinearLayout> bottomTabsList;
 
 
    @Override
@@ -34,10 +34,8 @@ public class MainActivity extends AppCompatActivity {
       setContentView(R.layout.activity_main);
       Log.d(TAG, "onCreate: Starting.");
 
-      mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
-
       // Set up ViewPager with the sections adapter
-      mViewPager = (ViewPager)findViewById(R.id.container); //creates id for ViewPager in main layout
+      ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
       setupViewPager(mViewPager);
 
       TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
       final View homeDot = findViewById(R.id.home_dot);
       homeDot.setVisibility(View.VISIBLE);
 
-      bottomTabsList = new ArrayList<>();
+      ArrayList<LinearLayout> bottomTabsList = new ArrayList<>();
       final LinearLayout homeTab = findViewById(R.id.home_tab);      bottomTabsList.add(homeTab);
       final LinearLayout searchTab = findViewById(R.id.search_tab);  bottomTabsList.add(searchTab);
       final LinearLayout cameraTab = findViewById(R.id.camera_tab);  bottomTabsList.add(cameraTab);
@@ -61,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
       homeTab.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
+            startActivity(new Intent(MainActivity.this, MainActivity.class));
+            overridePendingTransition(0,0);
             resetMarker(0);
          }
       });
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
          public void onClick(View v) {
             // start Search Activity
             startActivity(new Intent(MainActivity.this, SearchActivity.class));
+            overridePendingTransition(0,0);
             resetMarker(1);
          }
       });
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
          @Override
          public void onClick(View v) {
             startActivity(new Intent(MainActivity.this, NewPostActivity.class));
+            overridePendingTransition(0,0);
             resetMarker(2);
          }
       });
@@ -88,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
       accountTab.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
+            startActivity(new Intent(MainActivity.this, MyAccount.class));
+            overridePendingTransition(0,0);
             resetMarker(4);
          }
       });
