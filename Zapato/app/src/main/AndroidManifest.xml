@@ -29,6 +29,9 @@
         <activity android:name=".HomeView.Home"
             android:parentActivityName=".HomeView.Home"/>
 
+        <activity android:name=".ProductDetailView.ProductDetail"
+            android:parentActivityName=".HomeView.Home"/>
+
         <activity android:name=".LoginView.Login"/>
 
     </application>

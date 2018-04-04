@@ -32,7 +32,7 @@ public class ImageAdapter extends BaseAdapter {
    private Context thisContext; // IMPORTANT
 
    public ImageAdapter(Context context, ArrayList<Shoe> list) {
-      Log.d(TAG, "constructor: Starting.");
+      //Log.d(TAG, "constructor: Starting.");
       shoeList = list;
       mInflater = LayoutInflater.from(context);
       this.thisContext = context;

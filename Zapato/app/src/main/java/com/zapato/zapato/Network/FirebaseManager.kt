@@ -131,7 +131,7 @@ class FirebaseManager {
         // upload shoe's image file to storage with the same key
         uploadImageFile(newShoe.name, key, imageFile)
 
-        //TODO: temporary save all new shoe to buy now
+        //TODO: temporary save all new shoe to buy now, trending, near me
 //        buynow_ref.child(key).setValue(CurrenUser()!!.uid)
 //        nearme_ref.child(key).setValue(CurrenUser()!!.uid)
 //        trending_ref.child(key).setValue(CurrenUser()!!.uid)
@@ -142,7 +142,6 @@ class FirebaseManager {
     // MARK - upload image file to Firebase storage
 
     fun uploadImageFile(shoeName: String, key: String, imageFileInputStream: InputStream) {
-        Log.d("Firebase_Zapato_Tag", "Here")
 
         //point the storage reference to the correct end point
         storageRef = storageRef.child(key).child(shoeName)
@@ -189,27 +188,8 @@ class FirebaseManager {
         })
     }
 
+
     // MARK - Fetch shoe data depending on input database reference
-
-    fun fetchBuyNow(callback: (ArrayList<Shoe>) -> Unit) {
-        val mShoeList = ArrayList<Shoe>()
-
-        buynow_ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (snapshot in dataSnapshot.children) {
-                    // the returned snapshot.value is the shoeID
-                    fetchShoeById(snapshot.value.toString(), snapshot.key.toString()) {
-                        mShoeList.add(it)
-                        //completion handler, return the mShoeList to whoever called it
-                        callback(mShoeList!!)
-                    }
-                }
-            }
-            override fun onCancelled(databaseError: DatabaseError) {
-                println("The read failed: " + databaseError.code)
-            }
-        })
-    }
 
     fun fetch(ref: DatabaseReference, callback: (ArrayList<Shoe>) -> Unit) {
         val mShoeList = ArrayList<Shoe>()
@@ -235,14 +215,14 @@ class FirebaseManager {
     // MARK - Fetch shoe data using Shoe ID and seller ID
 
     fun fetchShoeById(sellerID: String, shoeID: String, callback: (Shoe) -> Unit) {
-//        Log.d("Zapato_Tag_shoeID", shoeID)
-//        Log.d("Zapato_Tag_sellerID", sellerID)
+        //Log.d("Zapato_Tag_shoeID", shoeID)
+        //Log.d("Zapato_Tag_sellerID", sellerID)
 
         shoe_ref.child(sellerID).child(shoeID).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val shoe = Shoe(dataSnapshot)
-                Log.d("Zapato_Tag_shoeID", shoeID)
-                Log.d("Zapato_Tag_shoeID", shoe.name)
+                //Log.d("Zapato_Tag_shoeID", shoeID)
+                //Log.d("Zapato_Tag_shoeID", shoe.name)
 
                 //return dataSnapshot as Shoe object
                 callback(shoe)

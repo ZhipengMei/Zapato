@@ -1,5 +1,6 @@
 package com.zapato.zapato.HomeView
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -14,7 +15,9 @@ import com.zapato.zapato.Model.ImageAdapter
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
 import com.zapato.zapato.Model.Shoe
+import com.zapato.zapato.ProductDetailView.ProductDetail
 import kotlinx.android.synthetic.main.grid_item.view.*
+import java.io.Serializable
 
 import java.util.ArrayList
 
@@ -41,20 +44,19 @@ class Tab1Fragment : Fragment() {
             gridView = thisView.findViewById<View>(R.id.product_browse) as GridView
             gridView!!.adapter = mImageAdapter
             //optional
-            gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
-        })
+            //gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
+            gridView!!.onItemClickListener = AdapterView.OnItemClickListener {
+                parent, view, position, id -> Toast.makeText(activity, "" + mShoeList!![position].name.toString(), Toast.LENGTH_SHORT).show()
 
-//        //fetch Buy Now function
-//        FirebaseManager().fetchBuyNow({
-//            mShoeList = it
-//            //parse mShoeList data into ImageAdapter
-//            mImageAdapter = ImageAdapter(this.context, mShoeList!!);
-//
-//            gridView = thisView.findViewById<View>(R.id.product_browse) as GridView
-//            gridView!!.adapter = mImageAdapter
-//            //optional
-//            gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
-//        })
+                val intent = Intent(this@Tab1Fragment.context, ProductDetail::class.java)
+
+                val bundle = Bundle()
+                bundle.putSerializable("productDetail", mShoeList!![position] as Serializable)
+                intent.putExtras(bundle)
+
+                startActivity(intent)
+            }
+        })
 
         return thisView
     }

@@ -3,14 +3,16 @@ package com.zapato.zapato.Model;
 import com.google.firebase.database.DataSnapshot;
 import com.zapato.zapato.Network.FirebaseManager;
 
+import java.io.Serializable;
 import java.net.URL;
 
 /**
  * Created by agustincards on 3/21/18.
  */
 
-public class Shoe {
+public class Shoe implements Serializable {
 
+    //public String shoeCondition;
     public String brand;
     public String name;
     public double size;
