@@ -10,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.Toast
 import com.zapato.zapato.Model.ImageAdapter
+import com.zapato.zapato.Model.SegueManager
 
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
@@ -44,8 +45,10 @@ class Tab2Fragment : Fragment() {
                     gridView = thisView.findViewById<View>(R.id.product_browse) as GridView
                     gridView!!.adapter = mImageAdapter
                     //optional
-                    gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
-
+                    gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+                        //Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show()
+                        SegueManager().passDatatoProductDetail(this@Tab2Fragment.context, mShoeList!![position])
+                    }
                     thisView = thisView
                 }
         )

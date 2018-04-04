@@ -1,5 +1,6 @@
 package com.zapato.zapato.HomeView
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -10,11 +11,14 @@ import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.Toast
 import com.zapato.zapato.Model.ImageAdapter
+import com.zapato.zapato.Model.SegueManager
 
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
 import com.zapato.zapato.Model.Shoe
+import com.zapato.zapato.ProductDetailView.ProductDetail
 import kotlinx.android.synthetic.main.grid_item.view.*
+import java.io.Serializable
 
 import java.util.ArrayList
 
@@ -44,8 +48,11 @@ class Tab3Fragment : Fragment() {
                     gridView = thisView.findViewById<View>(R.id.product_browse) as GridView
                     gridView!!.adapter = mImageAdapter
                     //optional
-                    gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
-
+                    gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+                        //Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show()
+                        // passing shoe object from this view to product detail view
+                        SegueManager().passDatatoProductDetail(this@Tab3Fragment.context, mShoeList!![position])
+                    }
                     thisView = thisView
                 }
         )

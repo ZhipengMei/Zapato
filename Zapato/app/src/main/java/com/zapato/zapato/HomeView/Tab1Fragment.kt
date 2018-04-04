@@ -11,6 +11,7 @@ import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.Toast
 import com.zapato.zapato.Model.ImageAdapter
+import com.zapato.zapato.Model.SegueManager
 
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
@@ -46,20 +47,15 @@ class Tab1Fragment : Fragment() {
             //optional
             //gridView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> Toast.makeText(activity, "" + position, Toast.LENGTH_SHORT).show() }
             gridView!!.onItemClickListener = AdapterView.OnItemClickListener {
-                parent, view, position, id -> Toast.makeText(activity, "" + mShoeList!![position].name.toString(), Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this@Tab1Fragment.context, ProductDetail::class.java)
-
-                val bundle = Bundle()
-                bundle.putSerializable("productDetail", mShoeList!![position] as Serializable)
-                intent.putExtras(bundle)
-
-                startActivity(intent)
+                parent, view, position, id ->
+                //Toast.makeText(activity, "" + mShoeList!![position].name.toString(), Toast.LENGTH_SHORT).show()
+                SegueManager().passDatatoProductDetail(this@Tab1Fragment.context, mShoeList!![position])
             }
         })
 
         return thisView
     }
+
 
 
 //    //fetch All Shoes function
