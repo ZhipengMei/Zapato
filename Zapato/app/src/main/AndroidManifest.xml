@@ -10,9 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait">
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,7 +24,12 @@
 
         <activity
             android:name=".NewPostView.NewPostActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".HomeView.Home"/>
+
+        <activity android:name=".HomeView.Home"
+            android:parentActivityName=".HomeView.Home"/>
+
+        <activity android:name=".LoginView.Login"/>
 
     </application>
 
