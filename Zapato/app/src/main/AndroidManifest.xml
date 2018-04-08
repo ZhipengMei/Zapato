@@ -24,7 +24,14 @@
 
         <activity
             android:name=".NewPostView.NewPostActivity"
-            android:parentActivityName=".HomeView.Home"/>
+            android:parentActivityName=".HomeView.Home">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
 
         <activity android:name=".HomeView.Home"
             android:parentActivityName=".HomeView.Home"/>
