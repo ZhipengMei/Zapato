@@ -154,12 +154,12 @@ class FirebaseManager {
         // task listener on upload progress
         uploadTask.addOnFailureListener(OnFailureListener {
             // Handle unsuccessful uploads
-            Log.d("Firebase_Zapato_Tag", "Error: Upload Shoe Image Failed")
+            //Log.d("Firebase_Zapato_Tag", "Error: Upload Shoe Image Failed")
         }).addOnSuccessListener(OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
             // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
             val downloadUrl = taskSnapshot.downloadUrl
 
-            Log.d("Firebase_Zapato_Tag", downloadUrl.toString())
+            //Log.d("Firebase_Zapato_Tag", downloadUrl.toString())
 
             // upload the url to shoe object database
             shoe_ref.child(CurrenUser()!!.uid).child(key).child("shoeImageUrl").setValue(downloadUrl.toString())
@@ -244,8 +244,8 @@ class FirebaseManager {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // check if this user exist
                 if (dataSnapshot.exists()) {
-                    Log.d("Firebase_Zapato_Tag", "User Found")
-                    Log.d("Firebase_Zapato_Tag", dataSnapshot.value.toString())
+                    //Log.d("Firebase_Zapato_Tag", "User Found")
+                    //Log.d("Firebase_Zapato_Tag", dataSnapshot.value.toString())
                     callback(User(dataSnapshot))
                 }
             }

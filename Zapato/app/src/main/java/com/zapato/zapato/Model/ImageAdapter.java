@@ -78,7 +78,7 @@ public class ImageAdapter extends BaseAdapter {
 
       Shoe shoe = getItem(i);
 
-      Log.d(TAG,shoe.shoeImageUrl);
+      //Log.d(TAG,shoe.shoeImageUrl);
       // download image using url with Glide media framework
       Glide.with(thisContext).load(shoe.shoeImageUrl).into(picture);
       name.setText(shoe.name);

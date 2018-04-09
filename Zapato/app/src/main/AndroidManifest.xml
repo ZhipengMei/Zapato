@@ -19,6 +19,7 @@
 
         <activity android:name=".activities.Login"/>
         <activity android:name=".activities.MainActivity"/>
+        <activity android:name=".ProductDetailView.ProductDetail"/>
 
     </application>
 
