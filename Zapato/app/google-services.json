@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "666385105172-ds7u89689urolehv37lfba7ma2ths0df.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zapato.zapato",
+            "certificate_hash": "4727e044c888c49b4f304fabfc3f23a84a71cdb3"
+          }
+        },
+        {
+          "client_id": "666385105172-s5d5jbkst4olst2nl61in778qnpjfeiq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zapato.zapato",
+            "certificate_hash": "97a536078ba6dc5c9cc13a7df6f9b706ad5a596c"
+          }
+        },
+        {
           "client_id": "666385105172-mut3s4fc05ojs74n4grm91uugsi3n4i0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -1,7 +1,5 @@
 package com.zapato.zapato.Model;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.zapato.zapato.HomeView.Tab1Fragment;
-import com.zapato.zapato.Network.FirebaseManager;
 import com.zapato.zapato.R;
 
 import java.util.ArrayList;
