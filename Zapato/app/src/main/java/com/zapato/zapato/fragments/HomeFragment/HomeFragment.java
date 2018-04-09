@@ -82,6 +82,7 @@ public class HomeFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        ( (MainActivity)getActivity()).updateToolbarTitle("Zapato");
     }
 
     @Override
