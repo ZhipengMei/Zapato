@@ -8,7 +8,7 @@ import com.google.firebase.FirebaseNetworkException
 import com.zapato.zapato.Model.Shoe
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
-import kotlinx.android.synthetic.main.activity_new_post.*
+import kotlinx.android.synthetic.main.activity_new_post_1.*
 import kotlinx.android.synthetic.main.activity_product_detail.*
 
 class ProductDetail: AppCompatActivity() {

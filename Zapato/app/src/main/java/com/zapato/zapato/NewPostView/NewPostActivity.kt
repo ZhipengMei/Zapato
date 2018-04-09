@@ -1,26 +1,19 @@
 package com.zapato.zapato.NewPostView
 
-import android.app.ActionBar
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.View
-import android.widget.Toolbar
 import com.bumptech.glide.Glide
-import com.google.firebase.auth.FirebaseAuth
-import com.zapato.zapato.HomeView.Tab1Fragment
 import com.zapato.zapato.Model.Shoe
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
-import kotlinx.android.synthetic.main.activity_new_post.*
-import java.io.File
-import java.io.FileInputStream
+import kotlinx.android.synthetic.main.activity_new_post_1.*
 
 class NewPostActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_post)
+        setContentView(R.layout.activity_new_post_1)
 
         // toolbar_newpost is defined in the layout file
         setSupportActionBar(toolbar_newpost);
