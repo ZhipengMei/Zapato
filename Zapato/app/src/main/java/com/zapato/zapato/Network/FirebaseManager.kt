@@ -14,16 +14,17 @@ import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.tasks.Task
 import com.google.firebase.database.*
-import com.zapato.zapato.HomeView.Home
-import com.zapato.zapato.MainActivity
+//import com.zapato.zapato.HomeView.Home
+//import com.zapato.zapato.MainActivity
 import com.zapato.zapato.Model.User
 import android.support.design.widget.Snackbar
 import android.support.annotation.NonNull
+import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.credentials.Credential
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.*
 import com.google.firebase.storage.FirebaseStorage
-import com.zapato.zapato.LoginView.Login
+import com.zapato.zapato.activities.Login
 import com.zapato.zapato.Model.Shoe
 import com.zapato.zapato.R
 import com.google.firebase.storage.StorageReference
@@ -44,7 +45,7 @@ import java.util.ArrayList
 class FirebaseManager {
 
     // Firebase Auth Object.
-    lateinit var firebaseAuth: FirebaseAuth
+    var firebaseAuth = FirebaseAuth.getInstance()
 
     // Database reference to "users" endpoint
     var my_users_Ref = FirebaseDatabase.getInstance().getReference("users")
@@ -65,9 +66,19 @@ class FirebaseManager {
     var storageRef = FirebaseStorage.getInstance().getReference("ShoeImages")
 
 
+    // MARK - Return Current Logged in User
+
+    fun CurrenUser(): FirebaseUser? {
+        return FirebaseAuth.getInstance().currentUser
+    }
+
     // MARK - Find out if user existed already, true: do nothing, else: write new user data to the database
 
     fun checkUserData(myRef: DatabaseReference) {
+
+//        println("Firebase_Zapato_myRef")
+//        println(myRef.toString())
+
 
         // Read from the database
         myRef.addValueEventListener(object : ValueEventListener {
@@ -102,14 +113,6 @@ class FirebaseManager {
         //upload user object to database
         my_users_Ref!!.child(newUser.uid).setValue(user)
     }
-
-
-    // MARK - Return Current Logged in User
-
-    fun CurrenUser(): FirebaseUser? {
-        return FirebaseAuth.getInstance().currentUser
-    }
-
 
 
     // MARK - Upload new shoe object to databse
@@ -151,12 +154,12 @@ class FirebaseManager {
         // task listener on upload progress
         uploadTask.addOnFailureListener(OnFailureListener {
             // Handle unsuccessful uploads
-            Log.d("Firebase_Zapato_Tag", "Error: Upload Shoe Image Failed")
+            //Log.d("Firebase_Zapato_Tag", "Error: Upload Shoe Image Failed")
         }).addOnSuccessListener(OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
             // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
             val downloadUrl = taskSnapshot.downloadUrl
 
-            Log.d("Firebase_Zapato_Tag", downloadUrl.toString())
+            //Log.d("Firebase_Zapato_Tag", downloadUrl.toString())
 
             // upload the url to shoe object database
             shoe_ref.child(CurrenUser()!!.uid).child(key).child("shoeImageUrl").setValue(downloadUrl.toString())
@@ -241,8 +244,8 @@ class FirebaseManager {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // check if this user exist
                 if (dataSnapshot.exists()) {
-                    Log.d("Firebase_Zapato_Tag", "User Found")
-                    Log.d("Firebase_Zapato_Tag", dataSnapshot.value.toString())
+                    //Log.d("Firebase_Zapato_Tag", "User Found")
+                    //Log.d("Firebase_Zapato_Tag", dataSnapshot.value.toString())
                     callback(User(dataSnapshot))
                 }
             }
@@ -252,5 +255,6 @@ class FirebaseManager {
             }
         })
     }
+
 
 }

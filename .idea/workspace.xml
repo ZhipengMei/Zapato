@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5be87e7-c7b0-4d18-84c4-fb352c84e21f" name="Default" comment="" />
+    <list default="true" id="b5be87e7-c7b0-4d18-84c4-fb352c84e21f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Zapato/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/Zapato/.idea/caches/build_file_checksums.ser" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/build.gradle" afterPath="$PROJECT_DIR$/Zapato/app/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/Zapato/app/src/main/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/java/com/zapato/zapato/HomeView/Home.java" afterPath="$PROJECT_DIR$/Zapato/app/src/main/java/com/zapato/zapato/HomeView/Home.java" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/java/com/zapato/zapato/LoginView/Login.kt" afterPath="$PROJECT_DIR$/Zapato/app/src/main/java/com/zapato/zapato/LoginView/Login.kt" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/java/com/zapato/zapato/MainActivity.kt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/java/com/zapato/zapato/Network/FirebaseManager.kt" afterPath="$PROJECT_DIR$/Zapato/app/src/main/java/com/zapato/zapato/Network/FirebaseManager.kt" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/res/layout/activity_home.xml" afterPath="$PROJECT_DIR$/Zapato/app/src/main/res/layout/activity_home.xml" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/Zapato/app/src/main/res/layout/activity_main.xml" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/res/layout/activity_new_post.xml" afterPath="$PROJECT_DIR$/Zapato/app/src/main/res/layout/activity_new_post.xml" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/res/layout/activity_product_detail.xml" afterPath="$PROJECT_DIR$/Zapato/app/src/main/res/layout/activity_product_detail.xml" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/Zapato/app/src/main/res/values/colors.xml" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/Zapato/app/src/main/res/values/strings.xml" />
+      <change beforePath="$PROJECT_DIR$/Zapato/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/Zapato/app/src/main/res/values/styles.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,15 +54,16 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -131,6 +147,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
