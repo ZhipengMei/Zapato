@@ -16,7 +16,11 @@ import com.zapato.zapato.Model.SegueManager
 import com.zapato.zapato.Model.Shoe
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
+<<<<<<< HEAD:Zapato/app/src/main/java/com/zapato/zapato/ProductDetailView/ProductDetail.kt
+import kotlinx.android.synthetic.main.activity_new_post_1.*
+=======
 import com.zapato.zapato.fragments.BaseFragment
+>>>>>>> master:Zapato/app/src/main/java/com/zapato/zapato/fragments/ProductDetailView/ProductDetail.kt
 import kotlinx.android.synthetic.main.activity_product_detail.*
 import android.content.Intent
 
