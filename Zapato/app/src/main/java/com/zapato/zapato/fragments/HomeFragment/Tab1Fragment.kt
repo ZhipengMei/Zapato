@@ -1,6 +1,5 @@
-package com.zapato.zapato.HomeView
+package com.zapato.zapato.fragments.HomeFragment;
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -9,18 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.GridView
-import android.widget.Toast
 import com.zapato.zapato.Model.ImageAdapter
 import com.zapato.zapato.Model.SegueManager
-
+import com.zapato.zapato.Model.Shoe
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
-import com.zapato.zapato.Model.Shoe
-
-import kotlinx.android.synthetic.main.grid_item.view.*
-import java.io.Serializable
-
-import java.util.ArrayList
+import java.util.*
 
 class Tab1Fragment : Fragment() {
     private var gridView: GridView? = null

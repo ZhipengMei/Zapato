@@ -1,4 +1,4 @@
-package com.zapato.zapato.HomeView
+package com.zapato.zapato.fragments.HomeFragment;
 
 import android.content.Intent
 import android.os.Bundle

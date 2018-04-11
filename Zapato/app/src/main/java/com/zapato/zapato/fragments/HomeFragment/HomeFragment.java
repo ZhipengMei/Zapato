@@ -1,4 +1,4 @@
-package com.zapato.zapato.fragments.HomeFragment;//package com.zapato.zapato.fragments;
+package com.zapato.zapato.fragments.HomeFragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,9 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.zapato.zapato.HomeView.Tab1Fragment;
-import com.zapato.zapato.HomeView.Tab2Fragment;
-import com.zapato.zapato.HomeView.Tab3Fragment;
 import com.zapato.zapato.Model.SectionsPageAdapter;
 import com.zapato.zapato.R;
 import com.zapato.zapato.activities.MainActivity;
