@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.zapato.zapato.HomeView.Tab1Fragment;
@@ -18,12 +17,8 @@ import com.zapato.zapato.Model.SectionsPageAdapter;
 import com.zapato.zapato.R;
 import com.zapato.zapato.activities.MainActivity;
 import com.zapato.zapato.fragments.BaseFragment;
-import com.zapato.zapato.utils.Utils;
 
 import java.util.ArrayList;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 public class HomeFragment extends BaseFragment {
