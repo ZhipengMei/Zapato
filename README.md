@@ -15,7 +15,7 @@ Table of contents
   * [Zapato](#zapato)
   * [Table of content](#table-of-contents)
   * [Documentations](#documentations)
-  * [To Do List](#to-do-list)
+  * [Prototype](#prototype)
  
 
 Documentations
@@ -31,26 +31,23 @@ Documentations
 - [x] [8. User Manual ](https://github.com/AnimeMei/Zapato/blob/master/Documentations/8.%20User%20Manual%20-%20Zapato.pdf)
 - [x] [9. UI Layout](https://github.com/AnimeMei/Zapato/blob/master/Documentations/9.%20UI%20Layout%20-%20Zapato.pdf)
 
-## Video Walkthrough 
-
-Here's a walkthrough of implemented user stories:
-
- <img src='https://github.com/ZhipengMei/Zapato/blob/master/Logo/zapato_gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/). 
-
-To Do List
+Prototype
 ==========
-* Helen
-<img src='https://github.com/ZhipengMei/Zapato/blob/matt_uiux/UI/artboards/Home.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.1%20Login.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.2%20Register.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/3.1%20Home%20-%20Trending.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.1%20Product%20Detail%20-%20Buy%20Now.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.2%20Product%20Detail%20-%20Image%20Scroll.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.3%20Product%20Detail%20-%20Purchase.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.1%20User%20Profile%20-%20Current%20Listings.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.2%20User%20Profile%20-%20Past%20Listings.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.3%20User%20Profiles%20-%20Feedback.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.2%20Create%20Listing%20-%20Information.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.3%20Create%20Listing%20-%20Pricing.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/pulls' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-* Nhi
-<img src='https://github.com/ZhipengMei/Zapato/blob/matt_uiux/UI/artboards/Product%20Detail%20-%20Buy%20Now.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-* Adrian & James
-(Link Database with Login)
-<img src='https://github.com/ZhipengMei/Zapato/blob/matt_uiux/UI/artboards/Login.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/matt_uiux/UI/artboards/Register.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
@@ -108,9 +105,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
- <img src='https://github.com/AnimeMei/CECS-343-mw-GroupD/blob/master/Video%20Walkthrough/Walkthrough1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
- <img src='https://github.com/AnimeMei/CECS-343-mw-GroupD/blob/master/Video%20Walkthrough/Walkthrough2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+ <img src='https://github.com/ZhipengMei/Zapato/blob/master/Logo/zapato_gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/). 
 
