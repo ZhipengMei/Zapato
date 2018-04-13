@@ -33,19 +33,35 @@ Documentations
 
 Prototype
 ==========
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.1%20Login.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.2%20Register.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/3.1%20Home%20-%20Trending.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.1%20Product%20Detail%20-%20Buy%20Now.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.2%20Product%20Detail%20-%20Image%20Scroll.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.3%20Product%20Detail%20-%20Purchase.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.1%20User%20Profile%20-%20Current%20Listings.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.2%20User%20Profile%20-%20Past%20Listings.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.3%20User%20Profiles%20-%20Feedback.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.2%20Create%20Listing%20-%20Information.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.3%20Create%20Listing%20-%20Pricing.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://github.com/ZhipengMei/Zapato/pulls' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.1%20Login.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.2%20Register.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/3.1%20Home%20-%20Trending.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.1%20Product%20Detail%20-%20Buy%20Now.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.2%20Product%20Detail%20-%20Image%20Scroll.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.3%20Product%20Detail%20-%20Purchase.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.1%20User%20Profile%20-%20Current%20Listings.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.2%20User%20Profile%20-%20Past%20Listings.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/5.3%20User%20Profiles%20-%20Feedback.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.1%20Create%20Listing.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.2%20Create%20Listing%20-%20Information.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.3%20Create%20Listing%20-%20Pricing.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.4%20Create%20Listing%20-%20Review.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/X%20User%20Profile%20-%20Favorites%20%5Bmove%20to%20main%20page%5D.png' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+
 
 
 
