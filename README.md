@@ -36,8 +36,6 @@ Prototype
 
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.1%20Login.png) 
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.2%20Register.png)
-![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.1%20Login.png)
-![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.2%20Register.png)
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/3.1%20Home%20-%20Trending.png)
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.1%20Product%20Detail%20-%20Buy%20Now.png)
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/4.2%20Product%20Detail%20-%20Image%20Scroll.png)
