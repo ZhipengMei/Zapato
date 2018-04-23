@@ -1,4 +1,4 @@
-package com.zapato.zapato.fragments.HomeFragment;
+package com.zapato.zapato.fragments;
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -13,21 +13,24 @@ import com.zapato.zapato.Model.SegueManager
 import com.zapato.zapato.Model.Shoe
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
+import com.zapato.zapato.activities.MainActivity
 import java.util.*
 
-class Tab1Fragment : Fragment() {
+class HomeFragment : Fragment() {
     private var gridView: GridView? = null
     private var mShoeList: ArrayList<Shoe>? = null
     private var mImageAdapter: ImageAdapter? = null
 
     companion object {
-        val TAG = "Tab1Fragment"
+        val TAG = "HomeFragment"
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        Log.d(TAG, "onCreateView: Starting.")
+        Log.d(com.zapato.zapato.fragments.HomeFragment.Companion.TAG, "onCreateView: Starting.")
 
         var thisView = inflater.inflate(R.layout.product_browse, container, false)
+
+        (activity as MainActivity).updateToolbarTitle("Home")
 
         //fetch Buy Now function
         FirebaseManager().fetch(FirebaseManager().buynow_ref, {
@@ -42,7 +45,7 @@ class Tab1Fragment : Fragment() {
             gridView!!.onItemClickListener = AdapterView.OnItemClickListener {
                 parent, view, position, id ->
                 //Toast.makeText(activity, "" + mShoeList!![position].name.toString(), Toast.LENGTH_SHORT).show()
-                SegueManager().passDatatoProductDetail(this@Tab1Fragment.context!!, mShoeList!![position])
+                SegueManager().passDatatoProductDetail(this@HomeFragment.context!!, mShoeList!![position])
             }
         })
 

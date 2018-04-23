@@ -12,8 +12,8 @@ import android.widget.ImageView;
 
 import com.zapato.zapato.R;
 import com.zapato.zapato.fragments.BaseFragment;
+import com.zapato.zapato.fragments.HomeFragment;
 import com.zapato.zapato.fragments.NewsFragment;
-import com.zapato.zapato.fragments.HomeFragment.HomeFragment;
 import com.zapato.zapato.fragments.ShareFragment;
 import com.zapato.zapato.fragments.ProfileFragment;
 import com.zapato.zapato.fragments.SearchFragment;

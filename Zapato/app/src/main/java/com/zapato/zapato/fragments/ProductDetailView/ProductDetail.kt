@@ -25,7 +25,7 @@ import android.content.Intent
 class ProductDetail: BaseFragment() {
 
     companion object {
-        val TAG = "Tab1Fragment"
+        val TAG = "HomeFragment"
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
