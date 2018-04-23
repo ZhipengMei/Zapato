@@ -17,6 +17,8 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="post_shoe">Post your shoe</string>
+    <string name="newpost_description">Use this space to provide an accurate description of your product. Include any additional necessary details.</string>
+    <string name="pricing">Pricing</string>
 
     <array name="tab_name">
         <item>Home</item>

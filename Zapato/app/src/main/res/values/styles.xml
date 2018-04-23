@@ -23,13 +23,16 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
-
-
+    <style name="PrimaryButton" parent="Theme.AppCompat">
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
 
 
     <!-- new add-->
     <style name="AppTheme" parent="AppTheme.Base">
 
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
