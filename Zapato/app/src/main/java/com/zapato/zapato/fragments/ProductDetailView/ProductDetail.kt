@@ -6,20 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.Button
-import android.widget.GridView
 import com.bumptech.glide.Glide
-import com.google.firebase.FirebaseNetworkException
-import com.zapato.zapato.Model.ImageAdapter
-import com.zapato.zapato.Model.SegueManager
 import com.zapato.zapato.Model.Shoe
 import com.zapato.zapato.Network.FirebaseManager
 import com.zapato.zapato.R
 import com.zapato.zapato.fragments.BaseFragment
 import kotlinx.android.synthetic.main.activity_product_detail.*
-import android.content.Intent
-
 
 
 class ProductDetail: BaseFragment() {

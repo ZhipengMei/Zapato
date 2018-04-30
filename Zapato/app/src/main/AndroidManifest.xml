@@ -2,13 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zapato.zapato">
 
+    <uses-feature android:name="android.hardware.camera"
+                  android:required="true" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/zapato_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/zapato_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".activities.CheckLoginStateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +23,6 @@
 
         <activity android:name=".activities.Login"/>
         <activity android:name=".activities.MainActivity"/>
-        <activity android:name=".ProductDetailView.ProductDetail"/>
 
     </application>
 

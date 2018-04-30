@@ -1,27 +1,20 @@
 package com.zapato.zapato.fragments
 
-import android.content.Context
+//import com.zapato.zapato.Network.FirebaseManager
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-
-import com.zapato.zapato.R
-import com.zapato.zapato.activities.MainActivity
-
-import butterknife.BindView
 import butterknife.ButterKnife
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
+import com.zapato.zapato.R
 import com.zapato.zapato.activities.Login
-import com.zapato.zapato.Network.FirebaseManager
-//import com.zapato.zapato.Network.FirebaseManager
-import kotlinx.android.synthetic.main.fragment_profile.*
+import com.zapato.zapato.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 
@@ -52,7 +45,7 @@ class ProfileFragment : BaseFragment() {
         //Logout button call
         //view.logout_button.setOnClickListener{ Login().logout(this@ProfileFragment.context!!) }
         view.logout_button.setOnClickListener{ logout() }
-
+//        view.findViewById<Button>(R.id.logout_button).setOnClickListener { logout() }
         return view
     }
 
