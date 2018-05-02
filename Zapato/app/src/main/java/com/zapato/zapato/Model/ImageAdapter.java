@@ -1,7 +1,6 @@
 package com.zapato.zapato.Model;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,12 +67,12 @@ public class ImageAdapter extends BaseAdapter {
       if (v == null) {
          v = mInflater.inflate(R.layout.grid_item, viewGroup, false);
          v.setTag(R.id.picture, v.findViewById(R.id.picture));
-         v.setTag(R.id.text, v.findViewById(R.id.text));
+         v.setTag(R.id.item_name, v.findViewById(R.id.item_name));
          v.setTag(R.id.price, v.findViewById(R.id.price));
       }
 
       picture = (ImageView) v.getTag(R.id.picture);
-      name = (TextView) v.getTag(R.id.text);
+      name = (TextView) v.getTag(R.id.item_name);
       price = (TextView) v.getTag(R.id.price);
 
       Shoe shoe = getItem(i);
