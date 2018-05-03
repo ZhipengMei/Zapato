@@ -17,8 +17,15 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="post_shoe">Post your shoe</string>
-    <string name="newpost_description">Use this space to provide an accurate description of your product. Include any additional necessary details.</string>
+    <string name="newpost_description">Provide a description of your product!</string>
     <string name="pricing">Pricing</string>
+    <string name="title_share1">Title</string>
+    <string name="edit_title_string">Name, brand, etc</string>
+    <string name="imagestxt_share2">Images</string>
+    <string name="takepic_buttonstring">Take photo</string>
+    <string name="uploadpic_buttonstring">Add from library</string>
+    <string name="cancelbutton1">Cancel</string>
+    <string name="nextbutton1"><![CDATA[Next >]]></string>
 
     <array name="tab_name">
         <item>Home</item>

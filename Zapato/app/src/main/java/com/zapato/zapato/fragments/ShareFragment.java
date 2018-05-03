@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +25,6 @@ import butterknife.ButterKnife;
 
 
 public class ShareFragment extends BaseFragment{
-
-    public static ShareFragment newInstance()
-    {
-        return new ShareFragment();
-    }
-
 
     String TAG = "ShareFragment";
 
@@ -79,7 +76,8 @@ public class ShareFragment extends BaseFragment{
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(),"go to next",Toast.LENGTH_SHORT).show();
-//                changeView(view);
+                nextFragment();
+                //changeView(view);
 //              ButterKnife.bind(this, view);
             }
         });
@@ -101,14 +99,28 @@ public class ShareFragment extends BaseFragment{
         });
     }
 
-    public void changeView(View view){
-        ViewGroup parent = (ViewGroup)view.getParent();
-        int index = parent.indexOfChild(view);
-        parent.removeView(view);
-        view = getLayoutInflater().inflate(R.layout.fragment_share_2, parent, false);
-        parent.addView(view, index);
+    public void nextFragment(){
+        FragmentManager fragmentManager = ((MainActivity)getContext()).getSupportFragmentManager();
 
+
+        ///////////////////////////////////
+        // TODO : ShareFragment2 is displaying at top of page and overlapping, NEEDS FIX
+        Fragment fragment = new ShareFragment2();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.remove(this);
+        ft.add(R.id.content_frame,fragment);
+        //ft.replace(R.id.fragment_share_1, fragment);
+        ft.commit();
     }
+
+//    public void changeView(View view){
+//        ViewGroup parent = (ViewGroup)view.getParent();
+//        int index = parent.indexOfChild(view);
+//        parent.removeView(view);
+//        view = getLayoutInflater().inflate(R.layout.fragment_share_2, parent, false);
+//        parent.addView(view, index);
+//
+//    }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 

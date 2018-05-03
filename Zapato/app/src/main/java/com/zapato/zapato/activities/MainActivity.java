@@ -3,6 +3,7 @@ package com.zapato.zapato.activities;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -34,6 +35,9 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    private FragmentManager mFragmentManager;
+
+
     private int[] mTabIconsSelected = {
             R.drawable.tab_home,
             R.drawable.tab_search,
@@ -57,6 +61,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mFragmentManager = getSupportFragmentManager();
 
         ButterKnife.bind(this);
 
