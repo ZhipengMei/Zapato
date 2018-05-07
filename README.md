@@ -15,7 +15,6 @@ Table of contents
   * [Zapato](#zapato)
   * [Table of content](#table-of-contents)
   * [Documentations](#documentations)
-  * [Prototype](#prototype)
  
 
 Documentations
@@ -36,6 +35,7 @@ Documentations
 <!---
 Prototype
 ==========
+  * [Prototype](#prototype)
 
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.1%20Login.png) 
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/2.2%20Register.png)
