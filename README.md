@@ -1,4 +1,4 @@
-<img src="https://github.com/AnimeMei/Zapato/blob/master/Logo/zapato_logo.jpg" alt="Zapato logo" height="100" >
+<img src="https://github.com/ZhipengMei/Zapato/blob/master/UI/2.%20Logo/zapato_logo.jpg" alt="Zapato logo" height="100" >
 
 Zapato
 ======
