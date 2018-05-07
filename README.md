@@ -31,6 +31,9 @@ Documentations
 - [x] [8. User Manual ](https://github.com/AnimeMei/Zapato/blob/master/Documentations/8.%20User%20Manual%20-%20Zapato.pdf)
 - [x] [9. UI Layout](https://github.com/AnimeMei/Zapato/blob/master/Documentations/9.%20UI%20Layout%20-%20Zapato.pdf)
 
+
+
+<!---
 Prototype
 ==========
 
@@ -49,7 +52,7 @@ Prototype
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/6.4%20Create%20Listing%20-%20Review.png)
 ![](https://github.com/ZhipengMei/Zapato/blob/master/UI/artboards/X%20User%20Profile%20-%20Favorites%20%5Bmove%20to%20main%20page%5D.png)
 
-
+-->
 
 
 
